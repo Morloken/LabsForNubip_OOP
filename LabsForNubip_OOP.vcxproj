@@ -24,6 +24,7 @@
     <ProjectGuid>{54c7e3d4-cfc9-427c-b116-9a70f90b68c1}</ProjectGuid>
     <RootNamespace>LabsForNubipOOP</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
+    <ProjectName>lab1</ProjectName>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">

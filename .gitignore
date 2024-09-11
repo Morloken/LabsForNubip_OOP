@@ -1,0 +1,41 @@
+# Exclude build files and binaries
+/build/
+/bin/
+
+# Visual Studio files (if using Visual Studio)
+.vs/
+
+# Git-specific folder
+.git/
+
+# Compiled Object files
+*.o
+*.obj
+
+# Static libraries
+*.lib
+*.a
+
+# Dynamic libraries
+*.dll
+*.so
+*.dylib
+
+# Executables
+*.exe
+*.out
+*.app
+
+# Temporary files
+*.tmp
+*.log
+*.temp
+
+# CMake-generated files
+CMakeFiles/
+CMakeCache.txt
+cmake_install.cmake
+Makefile
+
+# Visual Studio Code settings
+.vscode/

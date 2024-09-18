@@ -1,20 +1,89 @@
-// lab3.cpp : This file contains the 'main' function. Program execution begins and ends there.
-//
-
 #include <iostream>
+#include <fstream>
+#include <vector>
+#include <algorithm>
+#include <sstream>
+#include <windows.h>
 
-int main()
-{
-    std::cout << "Hello World!\n";
+using namespace std;
+
+// Клас для зберігання даних про студентів
+class Student {
+public:
+    string surname;
+    string name;
+    int math_grade;
+    int physics_grade;
+    int informatics_grade;
+
+    Student(string s, string n, int mg, int pg, int ig)
+        : surname(s), name(n), math_grade(mg), physics_grade(pg), informatics_grade(ig) {}
+
+    // Перевірка, чи є у студента п'ятірка
+    bool has_no_five() const {
+        return math_grade != 5 && physics_grade != 5 && informatics_grade != 5;
+    }
+};
+
+// Функція для зчитування студентів з файлу
+vector<Student> read_students_from_file(const string& filename) {
+    ifstream file(filename);
+    vector<Student> students;
+
+    if (!file.is_open()) {
+        cerr << "Не вдалося відкрити файл!" << endl;
+        return students;
+    }
+
+    string line;
+    while (getline(file, line)) {
+        stringstream ss(line);
+        string surname, name;
+        int math_grade, physics_grade, informatics_grade;
+
+        ss >> surname >> name >> math_grade >> physics_grade >> informatics_grade;
+        students.push_back(Student(surname, name, math_grade, physics_grade, informatics_grade));
+    }
+
+    file.close();
+    return students;
 }
 
-// Run program: Ctrl + F5 or Debug > Start Without Debugging menu
-// Debug program: F5 or Debug > Start Debugging menu
+// Функція для виведення студентів, що не мають п'ятірок, за алфавітом
+void print_students_without_fives(vector<Student>& students) {
+    // Відфільтрувати студентів, що не мають жодної п'ятірки
+    vector<Student> filtered_students;
+    for (const auto& student : students) {
+        if (student.has_no_five()) {
+            filtered_students.push_back(student);
+        }
+    }
 
-// Tips for Getting Started: 
-//   1. Use the Solution Explorer window to add/manage files
-//   2. Use the Team Explorer window to connect to source control
-//   3. Use the Output window to see build output and other messages
-//   4. Use the Error List window to view errors
-//   5. Go to Project > Add New Item to create new code files, or Project > Add Existing Item to add existing code files to the project
-//   6. In the future, to open this project again, go to File > Open > Project and select the .sln file
+    // Сортувати студентів за іменем
+    sort(filtered_students.begin(), filtered_students.end(), [](const Student& a, const Student& b) {
+        return a.name < b.name;
+        });
+
+    // Вивести імена студентів
+    cout << "Студенти, що не мають жодної п'ятірки:" << endl;
+    for (const auto& student : filtered_students) {
+        cout << student.name << " " << student.surname << endl;
+    }
+}
+
+int main() {
+
+    SetConsoleOutputCP(1251);
+    SetConsoleCP(1251);
+
+
+    string filename = "data.txt";
+
+    // Зчитуємо студентів з файлу
+    vector<Student> students = read_students_from_file(filename);
+
+    // Виводимо студентів, що не мають жодної п'ятірки
+    print_students_without_fives(students);
+
+    return 0;
+}

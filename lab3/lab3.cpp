@@ -77,7 +77,7 @@ int main() {
     SetConsoleCP(1251);
 
 
-    string filename = "data.txt";
+    string filename = "C:\\User\\user1\Documents\GitHub\LabsForNubip_OOP\lab3\x64\Debug";
 
     // «читуЇмо студент≥в з файлу
     vector<Student> students = read_students_from_file(filename);

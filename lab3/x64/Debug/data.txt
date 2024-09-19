@@ -1,5 +1,0 @@
-Ivanov Ivan 3 4 5
-Petrov Petr 4 4 4
-Sidorov Sidor 5 5 5
-Kovalenko Anna 4 3 2
-Tkachenko Oleg 2 4 5

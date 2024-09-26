@@ -21,16 +21,12 @@ using namespace std;
 
 class DynamicArray {
 private:
-    int* arr; //     * -  Динамічний показник на область пам'яті для масиву
+    int* arr; // Динамічний показник на область пам'яті для масиву
     int size;
 
 public:
     // Конструктор для ініціалізації динамічного масиву
-    DynamicArray(int n) : size(n) {//приймає один параметр n, що визначає розмір динамічного масиву, який буде створений.
-        /*
-        : size(n) — це список ініціалізації, що використовується для ініціалізації членів класу перед виконанням тіла конструктора.
-        size(n) означає, що член size класу DynamicArray буде ініціалізований значенням, яке передається в параметрі n.
-        */
+    DynamicArray(int n) : size(n) {
         arr = new int[size]; // Виділяємо пам'ять для масиву
         for (int i = 0; i < size; i++) {
             if (i % 2 == 0) {
@@ -42,6 +38,14 @@ public:
         }
     }
 
+    
+    DynamicArray(const DynamicArray& other) : size(other.size) {
+        arr = new int[size]; 
+        for (int i = 0; i < size; i++) {
+            arr[i] = other.arr[i]; 
+        }
+    }
+
     // Деструктор для звільнення пам'яті
     ~DynamicArray() {
         delete[] arr; // Звільняємо пам'ять
@@ -50,13 +54,13 @@ public:
     // Функція для виводу масиву з дужками на кожному третьому елементі
     void printArrayWithBrackets() const {
         /*
-        const, означає, що ця функція не змінює стан об'єкта, для якого вона викликається. Це гарантія, 
-        що члени класу (зокрема, масив та інші поля класу) 
+        const, означає, що ця функція не змінює стан об'єкта, для якого вона викликається. Це гарантія,
+        що члени класу (зокрема, масив та інші поля класу)
         не будуть змінені під час виконання цієї функції.
-        */ 
+        */
         for (int i = 0; i < size; i++) {
             if ((i + 1) % 3 == 0) {
-                cout << "[" << arr[i] << "] "; // Третій елемент виводимо в дужках(Для краси)
+                cout << "[" << arr[i] << "] "; // Третій елемент виводимо в дужках
             }
             else {
                 cout << arr[i] << " ";
@@ -77,14 +81,14 @@ public:
 
 // Функція, яка знаходить добуток кожного третього елемента
 int productOfEveryThird(const DynamicArray& array) {
-    int product = 1;//1 бо не множим на 0.
+    int product = 1;
     for (int i = 2; i < array.getSize(); i += 3) { // Починаємо з індексу 2 (третій елемент)
         product *= array.getElement(i);
     }
     return product;
 }
 
-int main() {//====================================================  MAIN
+int main() {
     // Налаштування кодування для консолі
     SetConsoleOutputCP(1251);
     SetConsoleCP(1251);
@@ -99,9 +103,15 @@ int main() {//====================================================  MAIN
     // Знаходимо добуток кожного третього елемента
     int result = productOfEveryThird(arr);
     cout << "Добуток кожного третього елемента: " << result << endl;
-    cout << "\n- - - - - - - - - - - - - - -\n\n\n\n\n";
+
+    //--------------
+    DynamicArray arrCopy = arr;
+    cout << "Копія масиву: ";
+    arrCopy.printArrayWithBrackets();
+
     return 0;
 }
+
 
 //==============================================================================CODE WITHOUT COMMENTS
 /*
@@ -127,6 +137,15 @@ public:
             else {
                 arr[i] = i - 1;    
             }
+        }
+    }
+
+
+
+    DynamicArray(const DynamicArray& other) : size(other.size) {
+        arr = new int[size];
+        for (int i = 0; i < size; i++) {
+            arr[i] = other.arr[i];
         }
     }
 
@@ -184,6 +203,12 @@ int main() {
     int result = productOfEveryThird(arr);
     cout << "Добуток кожного третього елемента: " << result << endl;
     cout << "\n- - - - - - - - - - - - - - -\n\n\n\n\n";
+
+
+     //--------------
+    DynamicArray arrCopy = arr;
+    cout << "Копія масиву: ";
+    arrCopy.printArrayWithBrackets();
     return 0;
 }
 

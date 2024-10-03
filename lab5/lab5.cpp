@@ -168,6 +168,7 @@ public:
 
 
 
+
     // Дружня функція для перевантаження оператора виведення                                            (<<)
     friend ostream& operator<<(ostream& os, const Romb& r);
 

@@ -149,6 +149,7 @@ int main() {
     drawClassDiagram();
     cout << endl << endl;
 
+
     // Видалення об'єктів та звільнення пам'яті (викликається деструктор)
     delete doc1;
     delete doc2;

@@ -1,5 +1,6 @@
 #include <iostream>
 #include <stdexcept>
+#include <windows.h>
 
 using namespace std;
 
@@ -76,6 +77,8 @@ public:
 
 
 int main() {//=======================================================================================================              MAIN
+    SetConsoleOutputCP(1251);
+    SetConsoleCP(1251);
     
         Stack<int> intStack(5);
         /*

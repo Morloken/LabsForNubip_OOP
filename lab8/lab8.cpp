@@ -1,20 +1,152 @@
-// lab8.cpp : This file contains the 'main' function. Program execution begins and ends there.
-//
-
 #include <iostream>
+#include <stdexcept>
 
-int main()
-{
-    std::cout << "Hello World!\n";
+using namespace std;
+
+template <typename ElementType>//пояснення в NOTES нижче
+class Stack {
+private:
+    ElementType* stackArray;         // Динамічний масив для зберігання елементів
+    int maxSize;           // Максимальний розмір стеку
+    int top;               // Індекс верхнього елементу стеку
+
+public:
+    // Конструктор
+    Stack(int size) {
+        if (size <= 0) throw invalid_argument("Size must be positive"); //розмір стеку завжди позитивний
+        maxSize = size;
+
+
+        stackArray = new ElementType[maxSize];// виділяється динамічно за допомогою new, щоб зберігати maxSize елементів.
+
+
+        top = -1;//Ініціалізується значенням -1, що означає, що стек порожній.
+    }
+
+    
+
+    // Додавання елементу в стек (перевантаження операції +) ============================================            +
+    Stack& operator + (const ElementType& element) {
+        if (top == maxSize - 1) {//перевірка, на всякий випадок, якщо стек буде переповнений
+            throw overflow_error("Stack is full");
+        }
+        stackArray[++top] = element;
+        return *this;
+        /*
+        Елемент додається до масиву, і top збільшується на 1.
+        Повертається посилання на сам об'єкт (*this), що дозволяє ланцюгові виклики.
+        */
+    }
+
+    // Витягування елементу з стеку (перевантаження операції -) =================================================               -
+    Stack& operator - (ElementType& element) {
+        if (top == -1) {//перевірка, на всякий випадок, якщо стек буде пустим
+            throw underflow_error("Stack is empty");
+        }
+        element = stackArray[top--];
+        return *this;
+        /*
+        Витягується елемент з масиву, а top зменшується на 1.
+        Витягнутий елемент передається в змінну element.
+        */
+    }
+    
+    
+
+    // Показати верхній елемент (без його вилучення).
+    ElementType peek() const { 
+     /*   Дозволяє отримати верхній елемент стеку без його вилучення,
+          а також забезпечує перевірку, щоб уникнути доступу до порожнього стеку.
+          Якщо стек порожній, вона видає помилку, а якщо ні, повертає значення верхнього елемента.    */
+    
+        if (top == -1) throw underflow_error("Stack is empty");
+        return stackArray[top];
+    }
+
+    
+
+
+
+    
+    ~Stack() {// Деструктор
+        delete[] stackArray;
+        cout << "\n Destructor automaticly deleted Class Stack\n";
+    }
+};
+
+
+int main() {//=======================================================================================================              MAIN
+    
+        Stack<int> intStack(5);
+        /*
+        Створення об'єкта:
+            intStack — це об'єкт (екземпляр) класу Stack.
+            Це стек, який зберігатиме елементи типу int (цілі числа).
+        Використання шаблону:
+            Оскільки клас Stack є шаблоном (template), 
+            тут зазначено, що типом даних, який буде використовуватись у стеку, є int.
+            Тобто, стек буде зберігати тільки цілі числа.
+        Виклик конструктора:
+            Значення 5 передається до конструктора класу Stack, який визначає розмір стеку. 
+            Cтек intStack зможе вміщувати до 5 елементів.
+            Конструктор виділяє пам'ять для збереження цих елементів у динамічному масиві.
+        */
+
+
+
+        int element;//зберігання значення, яке буде витягнуто зі стеку під час операції вилучення елементу
+
+        // Додавання елементів в стек, юзаю (+) перевантажений оператор
+        intStack + 10;
+        intStack + 20;
+        intStack + 30;
+        //intStack + 40;
+
+        cout << "Top element: " << intStack.peek() << endl;
+
+        // Витягування елементів через перевантажені знаки
+        intStack - element;//Витягується верхній елемент стеку і зберігається в змінній element.
+        cout << "Popped element: " << element << endl;
+
+        cout << "Top element after pop: " << intStack.peek() << endl;
+
+    
+   
+        
+        
+        
+    return 0;
 }
+//============================================================================                          NOTES
+/*
+*   #include <iostream>
+    #include <stdexcept>
 
-// Run program: Ctrl + F5 or Debug > Start Without Debugging menu
-// Debug program: F5 or Debug > Start Debugging menu
+    using namespace std;
 
-// Tips for Getting Started: 
-//   1. Use the Solution Explorer window to add/manage files
-//   2. Use the Team Explorer window to connect to source control
-//   3. Use the Output window to see build output and other messages
-//   4. Use the Error List window to view errors
-//   5. Go to Project > Add New Item to create new code files, or Project > Add Existing Item to add existing code files to the project
-//   6. In the future, to open this project again, go to File > Open > Project and select the .sln file
+    template <typename ElementType>                  <----------
+* 
+* 
+* 
+Рядок template <typename ElementType> вказує на те,
+що клас Stack є шаблоном(template), що дозволяє створювати стеки, 
+які можуть містити елементи будь - якого типу даних.
+
+
+typename ElementType: Цей фрагмент оголошує параметр шаблону з ім'ям ElementType. 
+    Коли ви створюєте об'єкт класу Stack, вказуєтья, який тип даних повинен використовуватись замість ElementType. 
+    Наприклад, якщо створюється Stack<int>, то ElementType стане int, і стек зможе зберігати тільки цілі числа.
+
+Використання параметра шаблону: 
+    У класі Stack параметр ElementType використовується для визначення типу елементів, 
+    які будуть зберігатись у динамічному масиві stackArray,
+    а також для визначення типів аргументів і значень, 
+    які використовуються в методах класу (наприклад, в перевантажених операціях + і -).
+
+Завдяки цій конструкції, можна створювати стеки для різних типів, наприклад:
+
+    Stack<int> для стека з цілими числами.
+    Stack<double> для стека з числами з плаваючою комою.
+    Stack<string> для стека з рядками.
+
+*/

@@ -1,0 +1,7 @@
+E:\Git Directories\First\LabsForNubip_OOP\lab9\bin\Debug\lab9.exe.config
+E:\Git Directories\First\LabsForNubip_OOP\lab9\bin\Debug\lab9.exe
+E:\Git Directories\First\LabsForNubip_OOP\lab9\bin\Debug\lab9.pdb
+E:\Git Directories\First\LabsForNubip_OOP\lab9\obj\Debug\lab9.csproj.AssemblyReference.cache
+E:\Git Directories\First\LabsForNubip_OOP\lab9\obj\Debug\lab9.csproj.CoreCompileInputs.cache
+E:\Git Directories\First\LabsForNubip_OOP\lab9\obj\Debug\lab9.exe
+E:\Git Directories\First\LabsForNubip_OOP\lab9\obj\Debug\lab9.pdb

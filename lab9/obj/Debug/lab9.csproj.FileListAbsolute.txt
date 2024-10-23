@@ -5,3 +5,10 @@ E:\Git Directories\First\LabsForNubip_OOP\lab9\obj\Debug\lab9.csproj.AssemblyRef
 E:\Git Directories\First\LabsForNubip_OOP\lab9\obj\Debug\lab9.csproj.CoreCompileInputs.cache
 E:\Git Directories\First\LabsForNubip_OOP\lab9\obj\Debug\lab9.exe
 E:\Git Directories\First\LabsForNubip_OOP\lab9\obj\Debug\lab9.pdb
+C:\Users\user1\Documents\GitHub\LabsForNubip_OOP\lab9\bin\Debug\lab9.exe.config
+C:\Users\user1\Documents\GitHub\LabsForNubip_OOP\lab9\bin\Debug\lab9.exe
+C:\Users\user1\Documents\GitHub\LabsForNubip_OOP\lab9\bin\Debug\lab9.pdb
+C:\Users\user1\Documents\GitHub\LabsForNubip_OOP\lab9\obj\Debug\lab9.csproj.AssemblyReference.cache
+C:\Users\user1\Documents\GitHub\LabsForNubip_OOP\lab9\obj\Debug\lab9.csproj.CoreCompileInputs.cache
+C:\Users\user1\Documents\GitHub\LabsForNubip_OOP\lab9\obj\Debug\lab9.exe
+C:\Users\user1\Documents\GitHub\LabsForNubip_OOP\lab9\obj\Debug\lab9.pdb

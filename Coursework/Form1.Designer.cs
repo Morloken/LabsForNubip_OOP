@@ -30,7 +30,6 @@
         {
             this.Type_of_planeTextBox = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.Number_of_passengersTextBox = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.Length_of_flightTextBox = new System.Windows.Forms.TextBox();
@@ -43,6 +42,8 @@
             this.Add_planeButton = new System.Windows.Forms.Button();
             this.Display_airplanesButton = new System.Windows.Forms.Button();
             this.label7 = new System.Windows.Forms.Label();
+            this.Passengers_numericUpDown = new System.Windows.Forms.NumericUpDown();
+            ((System.ComponentModel.ISupportInitialize)(this.Passengers_numericUpDown)).BeginInit();
             this.SuspendLayout();
             // 
             // Type_of_planeTextBox
@@ -63,13 +64,6 @@
             this.label1.Text = "Тип літака";
             this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
-            // Number_of_passengersTextBox
-            // 
-            this.Number_of_passengersTextBox.Location = new System.Drawing.Point(183, 89);
-            this.Number_of_passengersTextBox.Name = "Number_of_passengersTextBox";
-            this.Number_of_passengersTextBox.Size = new System.Drawing.Size(100, 20);
-            this.Number_of_passengersTextBox.TabIndex = 2;
-            // 
             // label2
             // 
             this.label2.AutoSize = true;
@@ -82,11 +76,11 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(69, 119);
+            this.label3.Location = new System.Drawing.Point(42, 122);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(114, 13);
+            this.label3.Size = new System.Drawing.Size(137, 13);
             this.label3.TabIndex = 4;
-            this.label3.Text = "Дальність перельоту";
+            this.label3.Text = "Дальність перельоту(км.)";
             // 
             // Length_of_flightTextBox
             // 
@@ -107,9 +101,9 @@
             this.label4.AutoSize = true;
             this.label4.Location = new System.Drawing.Point(69, 151);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(98, 13);
+            this.label4.Size = new System.Drawing.Size(113, 13);
             this.label4.TabIndex = 6;
-            this.label4.Text = "Витрата пального";
+            this.label4.Text = "Витрата пального(л.)";
             // 
             // Price_of_ticketTextBox
             // 
@@ -123,13 +117,13 @@
             this.label5.AutoSize = true;
             this.label5.Location = new System.Drawing.Point(69, 189);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(88, 13);
+            this.label5.Size = new System.Drawing.Size(114, 13);
             this.label5.TabIndex = 8;
-            this.label5.Text = "Вартість квитка";
+            this.label5.Text = "Вартість квитка(грн.)";
             // 
             // Fuel_costTextBox
             // 
-            this.Fuel_costTextBox.Location = new System.Drawing.Point(391, 151);
+            this.Fuel_costTextBox.Location = new System.Drawing.Point(423, 155);
             this.Fuel_costTextBox.Name = "Fuel_costTextBox";
             this.Fuel_costTextBox.Size = new System.Drawing.Size(100, 20);
             this.Fuel_costTextBox.TabIndex = 11;
@@ -138,11 +132,11 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(306, 154);
+            this.label6.Location = new System.Drawing.Point(312, 158);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(79, 13);
+            this.label6.Size = new System.Drawing.Size(105, 13);
             this.label6.TabIndex = 10;
-            this.label6.Text = "Ціна пального";
+            this.label6.Text = "Ціна пального(грн.)";
             this.label6.Click += new System.EventHandler(this.label6_Click);
             // 
             // Add_planeButton
@@ -176,11 +170,19 @@
             this.label7.Text = "Програма розрахунку собівартості квитка на літак";
             this.label7.Click += new System.EventHandler(this.label7_Click);
             // 
+            // Passengers_numericUpDown
+            // 
+            this.Passengers_numericUpDown.Location = new System.Drawing.Point(183, 90);
+            this.Passengers_numericUpDown.Name = "Passengers_numericUpDown";
+            this.Passengers_numericUpDown.Size = new System.Drawing.Size(120, 20);
+            this.Passengers_numericUpDown.TabIndex = 15;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1520, 691);
+            this.Controls.Add(this.Passengers_numericUpDown);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.Display_airplanesButton);
             this.Controls.Add(this.Add_planeButton);
@@ -193,12 +195,12 @@
             this.Controls.Add(this.Length_of_flightTextBox);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.Number_of_passengersTextBox);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.Type_of_planeTextBox);
             this.Name = "Form1";
             this.Text = "SkylaraCalculator";
             this.Load += new System.EventHandler(this.Form1_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.Passengers_numericUpDown)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -208,7 +210,6 @@
 
         private System.Windows.Forms.TextBox Type_of_planeTextBox;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox Number_of_passengersTextBox;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox Length_of_flightTextBox;
@@ -221,6 +222,7 @@
         private System.Windows.Forms.Button Add_planeButton;
         private System.Windows.Forms.Button Display_airplanesButton;
         private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.NumericUpDown Passengers_numericUpDown;
     }
 }
 

@@ -29,7 +29,7 @@ namespace Coursework
             try
             {
                 string planeType = Type_of_planeTextBox.Text;
-                int passengers = int.Parse(Number_of_passengersTextBox.Text);
+                int passengers = (int)Passengers_numericUpDown.Value;
                 double distance = double.Parse(Length_of_flightTextBox.Text);
                 double fuelConsumption = double.Parse(Fuel_consumptionTextBox.Text);
                 double ticketPrice = double.Parse(Price_of_ticketTextBox.Text);

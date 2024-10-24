@@ -38,6 +38,10 @@
             this.label4 = new System.Windows.Forms.Label();
             this.Price_of_ticketTextBox = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
+            this.Fuel_costTextBox = new System.Windows.Forms.TextBox();
+            this.label6 = new System.Windows.Forms.Label();
+            this.Add_planeButton = new System.Windows.Forms.Button();
+            this.Display_airplanesButton = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // Type_of_planeTextBox
@@ -122,11 +126,53 @@
             this.label5.TabIndex = 8;
             this.label5.Text = "Вартість квитка";
             // 
+            // Fuel_costTextBox
+            // 
+            this.Fuel_costTextBox.Location = new System.Drawing.Point(391, 151);
+            this.Fuel_costTextBox.Name = "Fuel_costTextBox";
+            this.Fuel_costTextBox.Size = new System.Drawing.Size(100, 20);
+            this.Fuel_costTextBox.TabIndex = 11;
+            this.Fuel_costTextBox.TextChanged += new System.EventHandler(this.textBox1_TextChanged_1);
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(306, 154);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(79, 13);
+            this.label6.TabIndex = 10;
+            this.label6.Text = "Ціна пального";
+            this.label6.Click += new System.EventHandler(this.label6_Click);
+            // 
+            // Add_planeButton
+            // 
+            this.Add_planeButton.Location = new System.Drawing.Point(142, 235);
+            this.Add_planeButton.Name = "Add_planeButton";
+            this.Add_planeButton.Size = new System.Drawing.Size(141, 45);
+            this.Add_planeButton.TabIndex = 12;
+            this.Add_planeButton.Text = "Додати літак";
+            this.Add_planeButton.UseVisualStyleBackColor = true;
+            this.Add_planeButton.Click += new System.EventHandler(this.Add_planeButton_Click);
+            // 
+            // Display_airplanesButton
+            // 
+            this.Display_airplanesButton.Location = new System.Drawing.Point(340, 235);
+            this.Display_airplanesButton.Name = "Display_airplanesButton";
+            this.Display_airplanesButton.Size = new System.Drawing.Size(141, 45);
+            this.Display_airplanesButton.TabIndex = 13;
+            this.Display_airplanesButton.Text = "Показати літаки";
+            this.Display_airplanesButton.UseVisualStyleBackColor = true;
+            this.Display_airplanesButton.Click += new System.EventHandler(this.Display_airplanesButton_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1520, 691);
+            this.Controls.Add(this.Display_airplanesButton);
+            this.Controls.Add(this.Add_planeButton);
+            this.Controls.Add(this.Fuel_costTextBox);
+            this.Controls.Add(this.label6);
             this.Controls.Add(this.Price_of_ticketTextBox);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.Fuel_consumptionTextBox);
@@ -156,6 +202,10 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TextBox Price_of_ticketTextBox;
         private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.TextBox Fuel_costTextBox;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Button Add_planeButton;
+        private System.Windows.Forms.Button Display_airplanesButton;
     }
 }
 

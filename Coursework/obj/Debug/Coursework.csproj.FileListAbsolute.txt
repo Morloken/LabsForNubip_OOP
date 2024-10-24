@@ -1,0 +1,10 @@
+E:\Git Directories\First\LabsForNubip_OOP\Coursework\bin\Debug\Coursework.exe.config
+E:\Git Directories\First\LabsForNubip_OOP\Coursework\bin\Debug\Coursework.exe
+E:\Git Directories\First\LabsForNubip_OOP\Coursework\bin\Debug\Coursework.pdb
+E:\Git Directories\First\LabsForNubip_OOP\Coursework\obj\Debug\Coursework.csproj.AssemblyReference.cache
+E:\Git Directories\First\LabsForNubip_OOP\Coursework\obj\Debug\Coursework.Form1.resources
+E:\Git Directories\First\LabsForNubip_OOP\Coursework\obj\Debug\Coursework.Properties.Resources.resources
+E:\Git Directories\First\LabsForNubip_OOP\Coursework\obj\Debug\Coursework.csproj.GenerateResource.cache
+E:\Git Directories\First\LabsForNubip_OOP\Coursework\obj\Debug\Coursework.csproj.CoreCompileInputs.cache
+E:\Git Directories\First\LabsForNubip_OOP\Coursework\obj\Debug\Coursework.exe
+E:\Git Directories\First\LabsForNubip_OOP\Coursework\obj\Debug\Coursework.pdb

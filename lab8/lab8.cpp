@@ -37,7 +37,7 @@ public:
     
 
     // Додавання елементу в стек (перевантаження операції +) ============================================            +
-    Stack& operator + (const ElementType& element) {
+    Stack& operator + (const ElementType & element) {
         if (top == maxSize - 1) {//перевірка, на всякий випадок, якщо стек буде переповнений
             throw overflow_error("Stack is full");
         }
@@ -50,7 +50,7 @@ public:
     }
 
     // Витягування елементу з стеку (перевантаження операції -) =================================================               -
-    Stack& operator - (ElementType& element) {
+    Stack& operator - (ElementType & element) {
         if (top == -1) {//перевірка, на всякий випадок, якщо стек буде пустим
             throw underflow_error("Stack is empty");
         }
@@ -112,7 +112,7 @@ int main() {//==================================================================
         // Додавання елементів в стек, юзаю (+) перевантажений оператор
         intStack + 10;
         intStack + 20;
-        intStack + 30;
+        //intStack + 30;
         //intStack + 40;
 
         cout << "Top element: " << intStack.peek() << endl;

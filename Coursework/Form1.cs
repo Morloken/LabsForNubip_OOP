@@ -75,5 +75,15 @@ namespace Coursework
                 MessageBox.Show($"Помилка: {ex.Message}");
             }
         }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label7_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

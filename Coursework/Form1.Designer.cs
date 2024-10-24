@@ -42,6 +42,7 @@
             this.label6 = new System.Windows.Forms.Label();
             this.Add_planeButton = new System.Windows.Forms.Button();
             this.Display_airplanesButton = new System.Windows.Forms.Button();
+            this.label7 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // Type_of_planeTextBox
@@ -164,11 +165,23 @@
             this.Display_airplanesButton.UseVisualStyleBackColor = true;
             this.Display_airplanesButton.Click += new System.EventHandler(this.Display_airplanesButton_Click);
             // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label7.Location = new System.Drawing.Point(302, 9);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(833, 39);
+            this.label7.TabIndex = 14;
+            this.label7.Text = "Програма розрахунку собівартості квитка на літак";
+            this.label7.Click += new System.EventHandler(this.label7_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1520, 691);
+            this.Controls.Add(this.label7);
             this.Controls.Add(this.Display_airplanesButton);
             this.Controls.Add(this.Add_planeButton);
             this.Controls.Add(this.Fuel_costTextBox);
@@ -184,7 +197,8 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.Type_of_planeTextBox);
             this.Name = "Form1";
-            this.Text = "Form1";
+            this.Text = "SkylaraCalculator";
+            this.Load += new System.EventHandler(this.Form1_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -206,6 +220,7 @@
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Button Add_planeButton;
         private System.Windows.Forms.Button Display_airplanesButton;
+        private System.Windows.Forms.Label label7;
     }
 }
 

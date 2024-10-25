@@ -43,6 +43,7 @@
             this.Display_airplanesButton = new System.Windows.Forms.Button();
             this.label7 = new System.Windows.Forms.Label();
             this.Passengers_numericUpDown = new System.Windows.Forms.NumericUpDown();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.Passengers_numericUpDown)).BeginInit();
             this.SuspendLayout();
             // 
@@ -177,11 +178,20 @@
             this.Passengers_numericUpDown.Size = new System.Drawing.Size(120, 20);
             this.Passengers_numericUpDown.TabIndex = 15;
             // 
+            // comboBox1
+            // 
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Location = new System.Drawing.Point(309, 51);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(121, 21);
+            this.comboBox1.TabIndex = 16;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1520, 691);
+            this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.Passengers_numericUpDown);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.Display_airplanesButton);
@@ -223,6 +233,7 @@
         private System.Windows.Forms.Button Display_airplanesButton;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.NumericUpDown Passengers_numericUpDown;
+        private System.Windows.Forms.ComboBox comboBox1;
     }
 }
 

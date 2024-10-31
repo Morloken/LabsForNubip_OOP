@@ -8,3 +8,13 @@ E:\Git Directories\First\LabsForNubip_OOP\Coursework\obj\Debug\Coursework.csproj
 E:\Git Directories\First\LabsForNubip_OOP\Coursework\obj\Debug\Coursework.csproj.CoreCompileInputs.cache
 E:\Git Directories\First\LabsForNubip_OOP\Coursework\obj\Debug\Coursework.exe
 E:\Git Directories\First\LabsForNubip_OOP\Coursework\obj\Debug\Coursework.pdb
+C:\Users\user1\Documents\GitHub\LabsForNubip_OOP\Coursework\bin\Debug\Coursework.exe.config
+C:\Users\user1\Documents\GitHub\LabsForNubip_OOP\Coursework\bin\Debug\Coursework.exe
+C:\Users\user1\Documents\GitHub\LabsForNubip_OOP\Coursework\bin\Debug\Coursework.pdb
+C:\Users\user1\Documents\GitHub\LabsForNubip_OOP\Coursework\obj\Debug\Coursework.csproj.AssemblyReference.cache
+C:\Users\user1\Documents\GitHub\LabsForNubip_OOP\Coursework\obj\Debug\Coursework.Form1.resources
+C:\Users\user1\Documents\GitHub\LabsForNubip_OOP\Coursework\obj\Debug\Coursework.Properties.Resources.resources
+C:\Users\user1\Documents\GitHub\LabsForNubip_OOP\Coursework\obj\Debug\Coursework.csproj.GenerateResource.cache
+C:\Users\user1\Documents\GitHub\LabsForNubip_OOP\Coursework\obj\Debug\Coursework.csproj.CoreCompileInputs.cache
+C:\Users\user1\Documents\GitHub\LabsForNubip_OOP\Coursework\obj\Debug\Coursework.exe
+C:\Users\user1\Documents\GitHub\LabsForNubip_OOP\Coursework\obj\Debug\Coursework.pdb

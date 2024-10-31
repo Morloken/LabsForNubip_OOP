@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.Type_of_planeTextBox = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -43,18 +42,13 @@
             this.Display_airplanesButton = new System.Windows.Forms.Button();
             this.label7 = new System.Windows.Forms.Label();
             this.Passengers_numericUpDown = new System.Windows.Forms.NumericUpDown();
-            this.Planes_types_comboBox = new System.Windows.Forms.ComboBox();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.function_Button = new System.Windows.Forms.Button();
+            this.listView1 = new System.Windows.Forms.ListView();
+            this.progressBar1 = new System.Windows.Forms.ProgressBar();
+            this.textBox1 = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.Passengers_numericUpDown)).BeginInit();
             this.SuspendLayout();
-            // 
-            // Type_of_planeTextBox
-            // 
-            this.Type_of_planeTextBox.Location = new System.Drawing.Point(244, 64);
-            this.Type_of_planeTextBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.Type_of_planeTextBox.Name = "Type_of_planeTextBox";
-            this.Type_of_planeTextBox.Size = new System.Drawing.Size(132, 22);
-            this.Type_of_planeTextBox.TabIndex = 0;
-            this.Type_of_planeTextBox.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
             // label1
             // 
@@ -90,16 +84,18 @@
             // Length_of_flightTextBox
             // 
             this.Length_of_flightTextBox.Location = new System.Drawing.Point(244, 146);
-            this.Length_of_flightTextBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Length_of_flightTextBox.Margin = new System.Windows.Forms.Padding(4);
             this.Length_of_flightTextBox.Name = "Length_of_flightTextBox";
+            this.Length_of_flightTextBox.ReadOnly = true;
             this.Length_of_flightTextBox.Size = new System.Drawing.Size(132, 22);
             this.Length_of_flightTextBox.TabIndex = 5;
             // 
             // Fuel_consumptionTextBox
             // 
             this.Fuel_consumptionTextBox.Location = new System.Drawing.Point(244, 186);
-            this.Fuel_consumptionTextBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Fuel_consumptionTextBox.Margin = new System.Windows.Forms.Padding(4);
             this.Fuel_consumptionTextBox.Name = "Fuel_consumptionTextBox";
+            this.Fuel_consumptionTextBox.ReadOnly = true;
             this.Fuel_consumptionTextBox.Size = new System.Drawing.Size(132, 22);
             this.Fuel_consumptionTextBox.TabIndex = 7;
             // 
@@ -116,8 +112,9 @@
             // Price_of_ticketTextBox
             // 
             this.Price_of_ticketTextBox.Location = new System.Drawing.Point(244, 233);
-            this.Price_of_ticketTextBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Price_of_ticketTextBox.Margin = new System.Windows.Forms.Padding(4);
             this.Price_of_ticketTextBox.Name = "Price_of_ticketTextBox";
+            this.Price_of_ticketTextBox.ReadOnly = true;
             this.Price_of_ticketTextBox.Size = new System.Drawing.Size(132, 22);
             this.Price_of_ticketTextBox.TabIndex = 9;
             // 
@@ -134,7 +131,7 @@
             // Fuel_costTextBox
             // 
             this.Fuel_costTextBox.Location = new System.Drawing.Point(564, 191);
-            this.Fuel_costTextBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Fuel_costTextBox.Margin = new System.Windows.Forms.Padding(4);
             this.Fuel_costTextBox.Name = "Fuel_costTextBox";
             this.Fuel_costTextBox.Size = new System.Drawing.Size(132, 22);
             this.Fuel_costTextBox.TabIndex = 11;
@@ -143,18 +140,18 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(416, 194);
+            this.label6.Location = new System.Drawing.Point(409, 194);
             this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(132, 16);
+            this.label6.Size = new System.Drawing.Size(154, 16);
             this.label6.TabIndex = 10;
-            this.label6.Text = "Ціна пального(грн.)";
+            this.label6.Text = "Ціна пального(грн./1л.)";
             this.label6.Click += new System.EventHandler(this.label6_Click);
             // 
             // Add_planeButton
             // 
             this.Add_planeButton.Location = new System.Drawing.Point(189, 289);
-            this.Add_planeButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Add_planeButton.Margin = new System.Windows.Forms.Padding(4);
             this.Add_planeButton.Name = "Add_planeButton";
             this.Add_planeButton.Size = new System.Drawing.Size(188, 55);
             this.Add_planeButton.TabIndex = 12;
@@ -165,7 +162,7 @@
             // Display_airplanesButton
             // 
             this.Display_airplanesButton.Location = new System.Drawing.Point(453, 289);
-            this.Display_airplanesButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Display_airplanesButton.Margin = new System.Windows.Forms.Padding(4);
             this.Display_airplanesButton.Name = "Display_airplanesButton";
             this.Display_airplanesButton.Size = new System.Drawing.Size(188, 55);
             this.Display_airplanesButton.TabIndex = 13;
@@ -188,15 +185,20 @@
             // Passengers_numericUpDown
             // 
             this.Passengers_numericUpDown.Location = new System.Drawing.Point(244, 111);
-            this.Passengers_numericUpDown.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Passengers_numericUpDown.Margin = new System.Windows.Forms.Padding(4);
+            this.Passengers_numericUpDown.Maximum = new decimal(new int[] {
+            1000,
+            0,
+            0,
+            0});
             this.Passengers_numericUpDown.Name = "Passengers_numericUpDown";
             this.Passengers_numericUpDown.Size = new System.Drawing.Size(160, 22);
             this.Passengers_numericUpDown.TabIndex = 15;
             // 
-            // Planes_types_comboBox
+            // comboBox1
             // 
-            this.Planes_types_comboBox.FormattingEnabled = true;
-            this.Planes_types_comboBox.Items.AddRange(new object[] {
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Items.AddRange(new object[] {
             "Boeing 747",
             "Airbus A380",
             "Boeing 737",
@@ -204,19 +206,61 @@
             "Embraer E190",
             "Bombardier CRJ200",
             "ATR 42"});
-            this.Planes_types_comboBox.Location = new System.Drawing.Point(412, 63);
-            this.Planes_types_comboBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.Planes_types_comboBox.Name = "Planes_types_comboBox";
-            this.Planes_types_comboBox.Size = new System.Drawing.Size(160, 24);
-            this.Planes_types_comboBox.TabIndex = 16;
-            this.Planes_types_comboBox.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
+            this.comboBox1.Location = new System.Drawing.Point(244, 61);
+            this.comboBox1.Margin = new System.Windows.Forms.Padding(4);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(160, 24);
+            this.comboBox1.TabIndex = 16;
+            this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
+            // 
+            // function_Button
+            // 
+            this.function_Button.Location = new System.Drawing.Point(283, 351);
+            this.function_Button.Name = "function_Button";
+            this.function_Button.Size = new System.Drawing.Size(270, 94);
+            this.function_Button.TabIndex = 17;
+            this.function_Button.Text = "Кількість пального, що необхідно витратити при перевезенні одного пасажира на оди" +
+    "ницю дальності";
+            this.function_Button.UseVisualStyleBackColor = true;
+            this.function_Button.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // listView1
+            // 
+            this.listView1.HideSelection = false;
+            this.listView1.Location = new System.Drawing.Point(856, 218);
+            this.listView1.Name = "listView1";
+            this.listView1.Size = new System.Drawing.Size(236, 253);
+            this.listView1.Sorting = System.Windows.Forms.SortOrder.Descending;
+            this.listView1.TabIndex = 18;
+            this.listView1.UseCompatibleStateImageBehavior = false;
+            this.listView1.Visible = false;
+            // 
+            // progressBar1
+            // 
+            this.progressBar1.Location = new System.Drawing.Point(244, 496);
+            this.progressBar1.Name = "progressBar1";
+            this.progressBar1.Size = new System.Drawing.Size(243, 23);
+            this.progressBar1.TabIndex = 19;
+            // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(720, 543);
+            this.textBox1.Multiline = true;
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(273, 22);
+            this.textBox1.TabIndex = 20;
+            this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged_2);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1924, 850);
-            this.Controls.Add(this.Planes_types_comboBox);
+            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.progressBar1);
+            this.Controls.Add(this.listView1);
+            this.Controls.Add(this.function_Button);
+            this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.Passengers_numericUpDown);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.Display_airplanesButton);
@@ -231,8 +275,7 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.Type_of_planeTextBox);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "Form1";
             this.Text = "SkylaraCalculator";
             this.Load += new System.EventHandler(this.Form1_Load);
@@ -243,8 +286,6 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.TextBox Type_of_planeTextBox;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
@@ -259,7 +300,11 @@
         private System.Windows.Forms.Button Display_airplanesButton;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.NumericUpDown Passengers_numericUpDown;
-        private System.Windows.Forms.ComboBox Planes_types_comboBox;
+        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.Button function_Button;
+        private System.Windows.Forms.ListView listView1;
+        private System.Windows.Forms.ProgressBar progressBar1;
+        private System.Windows.Forms.TextBox textBox1;
     }
 }
 

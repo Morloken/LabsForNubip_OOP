@@ -28,11 +28,18 @@ namespace Coursework
         {
             try
             {
-                string planeType = Type_of_planeTextBox.Text;
+                string planeType = comboBox1.SelectedItem?.ToString() ?? string.Empty; // Зчитування типу літака з comboBox1
                 int passengers = (int)Passengers_numericUpDown.Value;
                 double distance = double.Parse(Length_of_flightTextBox.Text);
                 double fuelConsumption = double.Parse(Fuel_consumptionTextBox.Text);
                 double ticketPrice = double.Parse(Price_of_ticketTextBox.Text);
+
+                // Перевірка, чи тип літака вибрано
+                if (string.IsNullOrEmpty(planeType))
+                {
+                    MessageBox.Show("Будь ласка, оберіть тип літака.");
+                    return;
+                }
 
                 // Створення об'єкта Airplane
                 Airplane airplane = new Airplane(planeType, passengers, distance, fuelConsumption, ticketPrice);
@@ -218,7 +225,7 @@ namespace Coursework
                 // Додавання даних до ListView
                 var item = new ListViewItem(new string[]
                 {
-            airplane.Type,
+            airplane.PlaneType,
             airplane.Passengers.ToString(),
             airplane.Distance.ToString(),
             airplane.FuelConsumption.ToString(),

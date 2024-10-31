@@ -215,7 +215,7 @@
             // 
             // function_Button
             // 
-            this.function_Button.Location = new System.Drawing.Point(283, 351);
+            this.function_Button.Location = new System.Drawing.Point(244, 351);
             this.function_Button.Name = "function_Button";
             this.function_Button.Size = new System.Drawing.Size(270, 94);
             this.function_Button.TabIndex = 17;
@@ -227,9 +227,9 @@
             // listView1
             // 
             this.listView1.HideSelection = false;
-            this.listView1.Location = new System.Drawing.Point(856, 218);
+            this.listView1.Location = new System.Drawing.Point(58, 451);
             this.listView1.Name = "listView1";
-            this.listView1.Size = new System.Drawing.Size(236, 253);
+            this.listView1.Size = new System.Drawing.Size(638, 114);
             this.listView1.Sorting = System.Windows.Forms.SortOrder.Descending;
             this.listView1.TabIndex = 18;
             this.listView1.UseCompatibleStateImageBehavior = false;
@@ -237,14 +237,14 @@
             // 
             // progressBar1
             // 
-            this.progressBar1.Location = new System.Drawing.Point(244, 496);
+            this.progressBar1.Location = new System.Drawing.Point(261, 571);
             this.progressBar1.Name = "progressBar1";
             this.progressBar1.Size = new System.Drawing.Size(243, 23);
             this.progressBar1.TabIndex = 19;
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(720, 543);
+            this.textBox1.Location = new System.Drawing.Point(734, 572);
             this.textBox1.Multiline = true;
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(273, 22);

@@ -164,6 +164,42 @@ void saveDataToFile(vector<Airplane>& airplanes, const string& filename, double 
         cout << "Не вдалося відкрити файл для запису.\n";
     }
 }
+void displayTicketPrice(const vector<Airplane>& airplanes) {
+    if (airplanes.empty()) {
+        cout << "Файл порожній або дані не завантажено.\n";
+        return;
+    }
+
+    // Display only the types available in the file
+    map<int, string> availableTypes;
+    int index = 1;
+    for (const auto& airplane : airplanes) {
+        availableTypes[index++] = airplane.getType();
+    }
+
+    cout << "Оберіть тип літака з наявних у файлі:\n";
+    for (const auto& entry : availableTypes) {
+        cout << entry.first << ". " << entry.second << endl;
+    }
+
+    int choice;
+    cout << "Введіть номер типу літака: ";
+    cin >> choice;
+
+    // Validate choice and display ticket price for selected airplane type
+    if (availableTypes.find(choice) != availableTypes.end()) {
+        string selectedType = availableTypes[choice];
+        for (const auto& airplane : airplanes) {
+            if (airplane.getType() == selectedType) {
+                cout << "Вартість квитка на літак " << selectedType << ": " << airplane.getTicketPrice() << " грн\n";
+                return;
+            }
+        }
+    }
+    else {
+        cout << "Невірний вибір. Спробуйте ще раз.\n";
+    }
+}
 
 
 
@@ -174,8 +210,9 @@ void displayMenu() {
     cout << "1. Записи \n(Інформація про записані літаки у фізичному файлі)\n";
     cout << "\n2. Буклет \n(Інформація про всі можливі літаки)\n";
     cout << "\n3. Витрати \n(Повертає кількість пального, що необхідно витратити при перевезенні одного пасажира на одиницю дальності.)\n";
-    cout << "\n4. Собівартість \n(Собівартість перевезення одного пасажира)(Дозапис данних у файл літаків)\n";
-    cout << "\n5. Вихід\n";
+    cout << "\n4. Собівартість \n(Собівартість перевезення одного пасажира)(Дозапис даних у файл літаків)\n";
+    cout << "\n5. Ціна квитка \n(Показує вартість квитка на літак з файлу записів)\n";
+    cout << "\n6. Вихід\n";
     cout << "Виберіть опцію: ";
 }
 
@@ -189,13 +226,13 @@ int main() {
 
     loadDataFromFile(airplanes, filename);
 
-
     int choice;
     do {
         displayMenu();
         cin >> choice;
+
         switch (choice) {
-        case 1: {
+        case 1:
             if (airplanes.empty()) {
                 cout << "Файл порожній або дані не завантажено.\n";
             }
@@ -206,19 +243,19 @@ int main() {
                 }
             }
             break;
-        }
-        case 2:{
+
+        case 2:
             cout << "Всі літаки в пам'яті:\n";
             for (const auto& entry : airplaneData) {
                 const string& type = entry.first;
                 int passengerCount = entry.second.first;
                 double range = entry.second.second;
-                Airplane airplane(type, passengerCount, range, 0, 0); // Використовуємо 0 для паливної витрати та вартості квитка
+                Airplane airplane(type, passengerCount, range, 0, 0);
                 airplane.displayBasicInfo();
                 cout << endl;
             }
             break;
-        }
+
         case 3: {
             string type = selectAirplaneType();
             int passengerCount = airplaneData[type].first;
@@ -248,20 +285,23 @@ int main() {
 
             airplanes.emplace_back(type, passengerCount, range, fuelConsumption, ticketPrice);
 
-            // Автоматично сортуємо та зберігаємо в файл
             saveDataToFile(airplanes, filename, fuelPrice);
             cout << "Інформацію збережено у файл.\n";
             break;
         }
 
         case 5:
+            displayTicketPrice(airplanes);
+            break;
+
+        case 6:
             cout << "Вихід з програми.\n";
             break;
 
         default:
             cout << "Невірний вибір. Спробуйте ще раз.\n";
         }
-    } while (choice != 5);
+    } while (choice != 6);
 
     return 0;
 }

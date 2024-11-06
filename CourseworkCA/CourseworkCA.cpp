@@ -11,7 +11,7 @@
 
 using namespace std;
 
-const double MIN_VALUE = 1e-6;  // Мінімальне значення для округлення
+
     
 
 // Прототип функції для вибору типу літака
@@ -286,7 +286,7 @@ int main() {
             airplanes.emplace_back(type, passengerCount, range, fuelConsumption, ticketPrice);
 
             saveDataToFile(airplanes, filename, fuelPrice);
-            cout << "Інформацію збережено у файл.\n";
+            cout << "--------------------------Інформацію збережено у файл--------------------------\n";
             break;
         }
 

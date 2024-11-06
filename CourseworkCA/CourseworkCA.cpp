@@ -4,11 +4,15 @@
 #include <vector>
 #include <fstream>
 #include <algorithm>
+#include <sstream>
 #include <string>
 #include <limits>
 #include <map>
 
 using namespace std;
+
+const double MIN_VALUE = 1e-6;  // Мінімальне значення для округлення
+    
 
 // Прототип функції для вибору типу літака
 string selectAirplaneType();
@@ -27,13 +31,14 @@ public:
 
     double calculateFuelPerPassengerPerDistance() const {
         return (fuelConsumption / range) / passengerCount;
-    }
+    }//функція, яка повертає кількість пального, 
+    //що необхідно витратити при перевезенні одного пасажира на одиницю дальності.
 
     string getType() const { return type; }
     int getPassengerCount() const { return passengerCount; }
     double getRange() const { return range; }
     double getTicketPrice() const { return ticketPrice; }
-    double getCostPerPassenger(double fuelPrice) const {
+    double getCostPerPassenger(double fuelPrice) const {//собівартість пасажира
         return calculateFuelPerPassengerPerDistance() * fuelPrice;
     }
 
@@ -44,19 +49,21 @@ public:
     }
 
     void displayInfo(double fuelPrice) const {
+        cout << "\n\n----------------------------------"<<endl;
         cout << "Тип літака: " << type << endl;
         cout << "Кількість пасажирів: " << passengerCount << endl;
         cout << "Дальність: " << range << " км" << endl;
         cout << "Розхід пального: " << fuelConsumption << " л" << endl;
         cout << "Вартість квитка: " << ticketPrice << " грн" << endl;
         cout << "Собівартість перевезення одного пасажира: " << getCostPerPassenger(fuelPrice) << " грн" << endl;
+        cout << "----------------------------------";
     }
 
     void saveToFile(ofstream& outFile, double fuelPrice) const {
         outFile << type << "," << passengerCount << "," << range << "," << fuelConsumption << "," << ticketPrice << ","
             << getCostPerPassenger(fuelPrice) << endl;
     }
-};
+};//======================================= CLASS AIRPLANE END
 
 map<string, pair<int, double>> airplaneData = {
     {"Boeing 737", {160, 2600}},
@@ -97,44 +104,78 @@ string selectAirplaneType() {
     }
 }
 
-vector<Airplane> loadDataFromFile(const string& filename) {
-    vector<Airplane> airplanes;
+void loadDataFromFile(vector<Airplane>& airplanes, const string& filename) {
     ifstream inFile(filename);
-
     if (inFile.is_open()) {
-        string type;
-        int passengerCount;
-        double range, fuelConsumption, ticketPrice;
-        while (getline(inFile, type, ',')) {
-            inFile >> passengerCount;
-            inFile.ignore(); // ігноруємо коми
-            inFile >> range;
-            inFile.ignore();
-            inFile >> fuelConsumption;
-            inFile.ignore();
-            inFile >> ticketPrice;
-            airplanes.emplace_back(type, passengerCount, range, fuelConsumption, ticketPrice);
+        airplanes.clear(); // Очищаємо вектор перед зчитуванням нових даних
+        string line;
+
+        while (getline(inFile, line)) {
+            // Використовуємо розділення за допомогою find і substr
+            size_t pos = 0;
+            vector<string> tokens;
+            while ((pos = line.find(',')) != string::npos) {
+                tokens.push_back(line.substr(0, pos));
+                line.erase(0, pos + 1);
+            }
+            tokens.push_back(line); // додаємо останнє значення
+
+            // Перевірка на кількість елементів
+            if (tokens.size() == 6) {
+                string type = tokens[0];
+                int passengerCount = stoi(tokens[1]);
+                double range = stod(tokens[2]);
+                double fuelConsumption = stod(tokens[3]);
+                double ticketPrice = stod(tokens[4]);
+                double costPerPassenger = stod(tokens[5]);
+
+                // Перевіряємо, чи дані коректні
+                if (passengerCount > -1 && range > -1 && fuelConsumption > -1 && ticketPrice >= 0) {
+                    airplanes.emplace_back(type, passengerCount, range, fuelConsumption, ticketPrice);
+                }
+                else {
+                    cout << "Некоректні дані в рядку.\n";
+                }
+            }
+            else {
+                cout << "Неправильна кількість полів у рядку.\n";
+            }
         }
+
         inFile.close();
     }
-    return airplanes;
+    else {
+        cout << "Не вдалося відкрити файл для читання.\n";
+    }
 }
 
-void saveDataToFile(const vector<Airplane>& airplanes, const string& filename, double fuelPrice) {
-    ofstream outFile(filename);
-    for (const auto& airplane : airplanes) {
-        airplane.saveToFile(outFile, fuelPrice);
+
+
+
+void saveDataToFile(vector<Airplane>& airplanes, const string& filename, double fuelPrice) {
+    // Відкриваємо файл у режимі додавання
+    ofstream outFile(filename, ios::app);
+    if (outFile.is_open()) {
+        // Записуємо лише новий літак у кінець файлу
+        airplanes.back().saveToFile(outFile, fuelPrice);
+        outFile.close();
     }
-    outFile.close();
+    else {
+        cout << "Не вдалося відкрити файл для запису.\n";
+    }
 }
+
+
+
+
 
 void displayMenu() {
     cout << "\nМеню:\n";
-    cout << "1. ІнформаціЯ про літаки у файлі\n";
-    cout << "2. Список інформації про всі можливі літаки\n";
-    cout << "3. Розрахувати паливо на одного пасажира на одиницю дальності\n";
-    cout << "4. Почати обчислення з введенням вартості пального\n";
-    cout << "5. Вийти\n";
+    cout << "1. Записи \n(Інформація про записані літаки у фізичному файлі)\n";
+    cout << "\n2. Буклет \n(Інформація про всі можливі літаки)\n";
+    cout << "\n3. Витрати \n(Повертає кількість пального, що необхідно витратити при перевезенні одного пасажира на одиницю дальності.)\n";
+    cout << "\n4. Собівартість \n(Собівартість перевезення одного пасажира)(Дозапис данних у файл літаків)\n";
+    cout << "\n5. Вихід\n";
     cout << "Виберіть опцію: ";
 }
 
@@ -146,21 +187,27 @@ int main() {
     string filename = "airplanes_data.txt";
     double fuelPrice = 0.0;
 
-    airplanes = loadDataFromFile(filename);
+    loadDataFromFile(airplanes, filename);
+
 
     int choice;
     do {
         displayMenu();
         cin >> choice;
         switch (choice) {
-        case 1:
-            cout << "Літаки з файлу:\n";
-            for (const auto& airplane : airplanes) {
-                airplane.displayInfo(fuelPrice);
+        case 1: {
+            if (airplanes.empty()) {
+                cout << "Файл порожній або дані не завантажено.\n";
+            }
+            else {
+                cout << "\n-------------------Літаки з файлу-------------------\n";
+                for (const auto& airplane : airplanes) {
+                    airplane.displayInfo(fuelPrice);
+                }
             }
             break;
-
-        case 2:
+        }
+        case 2:{
             cout << "Всі літаки в пам'яті:\n";
             for (const auto& entry : airplaneData) {
                 const string& type = entry.first;
@@ -168,10 +215,10 @@ int main() {
                 double range = entry.second.second;
                 Airplane airplane(type, passengerCount, range, 0, 0); // Використовуємо 0 для паливної витрати та вартості квитка
                 airplane.displayBasicInfo();
-                cout << endl; 
+                cout << endl;
             }
             break;
-
+        }
         case 3: {
             string type = selectAirplaneType();
             int passengerCount = airplaneData[type].first;
@@ -200,13 +247,10 @@ int main() {
             cin >> ticketPrice;
 
             airplanes.emplace_back(type, passengerCount, range, fuelConsumption, ticketPrice);
-            sort(airplanes.begin(), airplanes.end(), [fuelPrice](const Airplane& a, const Airplane& b) {
-                return a.getCostPerPassenger(fuelPrice) < b.getCostPerPassenger(fuelPrice);
-                });
-            for (const auto& airplane : airplanes) {
-                airplane.displayInfo(fuelPrice);
-            }
+
+            // Автоматично сортуємо та зберігаємо в файл
             saveDataToFile(airplanes, filename, fuelPrice);
+            cout << "Інформацію збережено у файл.\n";
             break;
         }
 

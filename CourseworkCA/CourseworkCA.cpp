@@ -48,14 +48,15 @@ public:
         cout << "Дальність: " << range << " км" << endl;
     }
 
-    void displayInfo(double fuelPrice) const {
+    void displayInfo(double fuelPrice, bool deductionCost) const {
         cout << "\n\n----------------------------------"<<endl;
         cout << "Тип літака: " << type << endl;
         cout << "Кількість пасажирів: " << passengerCount << endl;
         cout << "Дальність: " << range << " км" << endl;
         cout << "Розхід пального: " << fuelConsumption << " л" << endl;
         cout << "Вартість квитка: " << ticketPrice << " грн" << endl;
-        cout << "Собівартість перевезення одного пасажира: " << getCostPerPassenger(fuelPrice) << " грн" << endl;
+        if(deductionCost)cout << "Собівартість перевезення одного пасажира: " << getCostPerPassenger(fuelPrice) << " грн" << endl;
+        
         cout << "----------------------------------";
     }
 
@@ -227,6 +228,7 @@ int main() {
     loadDataFromFile(airplanes, filename);
 
     int choice;
+    bool deductionСost = false;
     do {
         displayMenu();
         cin >> choice;
@@ -239,7 +241,7 @@ int main() {
             else {
                 cout << "\n-------------------Літаки з файлу-------------------\n";
                 for (const auto& airplane : airplanes) {
-                    airplane.displayInfo(fuelPrice);
+                    airplane.displayInfo(fuelPrice, deductionСost);
                 }
             }
             break;
@@ -270,6 +272,7 @@ int main() {
         }
 
         case 4: {
+            deductionСost = true;
             cout << "Введіть вартість одного літра пального: ";
             cin >> fuelPrice;
 

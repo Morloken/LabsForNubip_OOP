@@ -20,6 +20,6 @@
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <Text Include="airplanes_data.txt" />
+    <Text Include="airplanes_flights_data.txt" />
   </ItemGroup>
 </Project>

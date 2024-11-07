@@ -221,7 +221,7 @@ int main() {
     SetConsoleCP(1251);
 
     vector<Airplane> airplanes;
-    string filename = "airplanes_data.txt";
+    string filename = "airplanes_flights_data.txt";
     double fuelPrice = 0.0;
 
     loadDataFromFile(airplanes, filename);

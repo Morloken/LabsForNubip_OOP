@@ -1,4 +1,5 @@
 #define NOMINMAX
+//Бібліотеки для проекту
 #include <windows.h>
 #include <iostream>
 #include <vector>
@@ -8,6 +9,7 @@
 #include <string>
 #include <limits>
 #include <map>
+//Бібліотеки для проекту
 
 using namespace std;
 
@@ -17,23 +19,25 @@ using namespace std;
 // Прототип функції для вибору типу літака
 string selectAirplaneType();
 
+
+//Клас Літак
 class Airplane {
-private:
-    string type;
-    int passengerCount;
-    double range;
-    double fuelConsumption;
-    double ticketPrice;
+private://приватна зона
+    string type;//Тип літака
+    int passengerCount;//Кількість пасажирів
+    double range;//Дальність польоту
+    double fuelConsumption;//Споживання палива
+    double ticketPrice;//Ціна квитка
 
-public:
+public://Публічне поле
     Airplane(const string& type, int passengerCount, double range, double fuelConsumption, double ticketPrice)
-        : type(type), passengerCount(passengerCount), range(range), fuelConsumption(fuelConsumption), ticketPrice(ticketPrice) {}
+        : type(type), passengerCount(passengerCount), range(range), fuelConsumption(fuelConsumption), ticketPrice(ticketPrice) {}//Конструктор класу
 
-    double calculateFuelPerPassengerPerDistance() const {
+    double calculateFuelPerPassengerPerDistance() const {//Функція яка повертає кількість пального, що необхідно витратити при перевезенні одного пасажира на одиницю дальності.
         return (fuelConsumption / range) / passengerCount;
-    }//функція, яка повертає кількість пального, 
-    //що необхідно витратити при перевезенні одного пасажира на одиницю дальності.
+    }
 
+    // Геттери для отримання значень полів
     string getType() const { return type; }
     int getPassengerCount() const { return passengerCount; }
     double getRange() const { return range; }
@@ -41,14 +45,15 @@ public:
     double getCostPerPassenger(double fuelPrice) const {//собівартість пасажира
         return calculateFuelPerPassengerPerDistance() * fuelPrice;
     }
+    // Геттери для отримання значень полів
 
-    void displayBasicInfo() const {
+    void displayBasicInfo() const {//Функція виводу інформації про тип літака, пасажирів, дальність перельоту
         cout << "Тип літака: " << type << endl;
         cout << "Кількість пасажирів: " << passengerCount << endl;
         cout << "Дальність: " << range << " км" << endl;
     }
 
-    void displayInfo(double fuelPrice, bool deductionCost) const {
+    void displayInfo(double fuelPrice, bool deductionCost) const {//Функція виводу більш детальної інформації про тип літака, пасажирів, дальність перельоту, витрату пального, вартість квитка, собівартість перевезення пасажира
         cout << "\n\n----------------------------------"<<endl;
         cout << "Тип літака: " << type << endl;
         cout << "Кількість пасажирів: " << passengerCount << endl;
@@ -60,13 +65,13 @@ public:
         cout << "----------------------------------";
     }
 
-    void saveToFile(ofstream& outFile, double fuelPrice) const {
+    void saveToFile(ofstream& outFile, double fuelPrice) const {//Функція зберігання отриманних даних у файл
         outFile << type << "," << passengerCount << "," << range << "," << fuelConsumption << "," << ticketPrice << ","
             << getCostPerPassenger(fuelPrice) << endl;
     }
-};//======================================= CLASS AIRPLANE END
+};//Клас Літак
 
-map<string, pair<int, double>> airplaneData = {
+map<string, pair<int, double>> airplaneData = {// Мапа з базовими даними для літаків (назва літака, кількість пасажирів та дальність)
     {"Boeing 737", {160, 2600}},
     {"Airbus A320", {180, 2700}},
     {"Embraer E190", {100, 1800}},
@@ -79,8 +84,8 @@ map<string, pair<int, double>> airplaneData = {
     {"Cessna 208", {12, 1200}}
 };
 
-// Функція для вибору типу літака
-string selectAirplaneType() {
+
+string selectAirplaneType() {// Функція для вибору типу літака з мапи airplaneData
     int choice;
     while (true) {
         cout << "Оберіть тип літака:" << endl;
@@ -105,7 +110,7 @@ string selectAirplaneType() {
     }
 }
 
-void loadDataFromFile(vector<Airplane>& airplanes, const string& filename) {
+void loadDataFromFile(vector<Airplane>& airplanes, const string& filename) {// Функція для завантаження даних з файлу у вектор літаків
     ifstream inFile(filename);
     if (inFile.is_open()) {
         airplanes.clear(); // Очищаємо вектор перед зчитуванням нових даних
@@ -153,7 +158,7 @@ void loadDataFromFile(vector<Airplane>& airplanes, const string& filename) {
 
 
 
-void saveDataToFile(vector<Airplane>& airplanes, const string& filename, double fuelPrice) {
+void saveDataToFile(vector<Airplane>& airplanes, const string& filename, double fuelPrice) {// Функція для збереження нових даних у файл
     // Відкриваємо файл у режимі додавання
     ofstream outFile(filename, ios::app);
     if (outFile.is_open()) {
@@ -165,13 +170,13 @@ void saveDataToFile(vector<Airplane>& airplanes, const string& filename, double 
         cout << "Не вдалося відкрити файл для запису.\n";
     }
 }
-void displayTicketPrice(const vector<Airplane>& airplanes) {
+void displayTicketPrice(const vector<Airplane>& airplanes) {// Функція для відображення вартості квитка для певного типу літака
     if (airplanes.empty()) {
         cout << "Файл порожній або дані не завантажено.\n";
         return;
     }
 
-    // Display only the types available in the file
+    
     map<int, string> availableTypes;
     int index = 1;
     for (const auto& airplane : airplanes) {
@@ -187,7 +192,7 @@ void displayTicketPrice(const vector<Airplane>& airplanes) {
     cout << "Введіть номер типу літака: ";
     cin >> choice;
 
-    // Validate choice and display ticket price for selected airplane type
+    
     if (availableTypes.find(choice) != availableTypes.end()) {
         string selectedType = availableTypes[choice];
         for (const auto& airplane : airplanes) {
@@ -206,7 +211,7 @@ void displayTicketPrice(const vector<Airplane>& airplanes) {
 
 
 
-void displayMenu() {
+void displayMenu() {// Відображення головного меню програми
     cout << "\n----------Меню----------\n";
     cout << "1. Рейси \n(Інформація про записані рейси літаків і собівартості пасажирів у файлі)\n";
     cout << "\n2. Буклет \n(Інформація про всі можливі літаки)\n";
@@ -217,24 +222,24 @@ void displayMenu() {
     cout << "Виберіть опцію: ";
 }
 
-int main() {
-    SetConsoleOutputCP(1251);
+int main() {//Головна функція програми
+    SetConsoleOutputCP(1251);//Налаштування консолі під українську мову
     SetConsoleCP(1251);
 
-    vector<Airplane> airplanes;
-    string filename = "airplanes_flights_data.txt";
-    double fuelPrice = 0.0;
+    vector<Airplane> airplanes;//Вектор літаків
+    string filename = "airplanes_flights_data.txt";//Назва файлу
+    double fuelPrice = 0.0;//Ціна пального
 
-    loadDataFromFile(airplanes, filename);
+    loadDataFromFile(airplanes, filename);//Виклик функції завантаження даних з файлу
 
-    int choice;
+    int choice;//Змінна номеру вибору в меню
     bool deductionСost = false;
     do {
-        displayMenu();
+        displayMenu();//Виклик функції показу меню
         cin >> choice;
 
         switch (choice) {
-        case 1:
+        case 1://Опція 1
             if (airplanes.empty()) {
                 cout << "Файл порожній або дані не завантажено.\n";
             }
@@ -246,7 +251,7 @@ int main() {
             }
             break;
 
-        case 2:
+        case 2://Опція 2 
             cout << "Всі літаки в пам'яті:\n";
             for (const auto& entry : airplaneData) {
                 const string& type = entry.first;
@@ -258,7 +263,7 @@ int main() {
             }
             break;
 
-        case 3: {
+        case 3: {//Опція 3
             string type = selectAirplaneType();
             int passengerCount = airplaneData[type].first;
             double range = airplaneData[type].second;
@@ -271,7 +276,7 @@ int main() {
             break;
         }
 
-        case 4: {
+        case 4: {//Опція 4
             deductionСost = true;
             cout << "Введіть вартість одного літра пального: ";
             cin >> fuelPrice;
@@ -293,18 +298,18 @@ int main() {
             break;
         }
 
-        case 5:
+        case 5://Опція 5
             displayTicketPrice(airplanes);
             break;
 
-        case 6:
+        case 6://Опція 6
             cout << "Вихід з програми.\n";
             break;
 
-        default:
+        default://Опція за замовчуванням
             cout << "Невірний вибір. Спробуйте ще раз.\n";
         }
-    } while (choice != 6);
+    } while (choice != 6);//Програма працює поки користувач не вирішить завершити її 6тою опцією
 
     return 0;
 }

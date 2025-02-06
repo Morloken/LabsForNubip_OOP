@@ -1,0 +1,15 @@
+E:\Git Directories\First\LabsForNubip_OOP\lab10\bin\Debug\net8.0\lab10.exe
+E:\Git Directories\First\LabsForNubip_OOP\lab10\bin\Debug\net8.0\lab10.deps.json
+E:\Git Directories\First\LabsForNubip_OOP\lab10\bin\Debug\net8.0\lab10.runtimeconfig.json
+E:\Git Directories\First\LabsForNubip_OOP\lab10\bin\Debug\net8.0\lab10.dll
+E:\Git Directories\First\LabsForNubip_OOP\lab10\bin\Debug\net8.0\lab10.pdb
+E:\Git Directories\First\LabsForNubip_OOP\lab10\obj\Debug\net8.0\lab10.GeneratedMSBuildEditorConfig.editorconfig
+E:\Git Directories\First\LabsForNubip_OOP\lab10\obj\Debug\net8.0\lab10.AssemblyInfoInputs.cache
+E:\Git Directories\First\LabsForNubip_OOP\lab10\obj\Debug\net8.0\lab10.AssemblyInfo.cs
+E:\Git Directories\First\LabsForNubip_OOP\lab10\obj\Debug\net8.0\lab10.csproj.CoreCompileInputs.cache
+E:\Git Directories\First\LabsForNubip_OOP\lab10\obj\Debug\net8.0\lab10.sourcelink.json
+E:\Git Directories\First\LabsForNubip_OOP\lab10\obj\Debug\net8.0\lab10.dll
+E:\Git Directories\First\LabsForNubip_OOP\lab10\obj\Debug\net8.0\refint\lab10.dll
+E:\Git Directories\First\LabsForNubip_OOP\lab10\obj\Debug\net8.0\lab10.pdb
+E:\Git Directories\First\LabsForNubip_OOP\lab10\obj\Debug\net8.0\lab10.genruntimeconfig.cache
+E:\Git Directories\First\LabsForNubip_OOP\lab10\obj\Debug\net8.0\ref\lab10.dll

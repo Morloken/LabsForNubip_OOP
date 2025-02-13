@@ -1,0 +1,15 @@
+E:\Git Directories\First\LabsForNubip_OOP\lab11\bin\Debug\net8.0\lab11.exe
+E:\Git Directories\First\LabsForNubip_OOP\lab11\bin\Debug\net8.0\lab11.deps.json
+E:\Git Directories\First\LabsForNubip_OOP\lab11\bin\Debug\net8.0\lab11.runtimeconfig.json
+E:\Git Directories\First\LabsForNubip_OOP\lab11\bin\Debug\net8.0\lab11.dll
+E:\Git Directories\First\LabsForNubip_OOP\lab11\bin\Debug\net8.0\lab11.pdb
+E:\Git Directories\First\LabsForNubip_OOP\lab11\obj\Debug\net8.0\lab11.GeneratedMSBuildEditorConfig.editorconfig
+E:\Git Directories\First\LabsForNubip_OOP\lab11\obj\Debug\net8.0\lab11.AssemblyInfoInputs.cache
+E:\Git Directories\First\LabsForNubip_OOP\lab11\obj\Debug\net8.0\lab11.AssemblyInfo.cs
+E:\Git Directories\First\LabsForNubip_OOP\lab11\obj\Debug\net8.0\lab11.csproj.CoreCompileInputs.cache
+E:\Git Directories\First\LabsForNubip_OOP\lab11\obj\Debug\net8.0\lab11.sourcelink.json
+E:\Git Directories\First\LabsForNubip_OOP\lab11\obj\Debug\net8.0\lab11.dll
+E:\Git Directories\First\LabsForNubip_OOP\lab11\obj\Debug\net8.0\refint\lab11.dll
+E:\Git Directories\First\LabsForNubip_OOP\lab11\obj\Debug\net8.0\lab11.pdb
+E:\Git Directories\First\LabsForNubip_OOP\lab11\obj\Debug\net8.0\lab11.genruntimeconfig.cache
+E:\Git Directories\First\LabsForNubip_OOP\lab11\obj\Debug\net8.0\ref\lab11.dll

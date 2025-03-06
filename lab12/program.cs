@@ -67,11 +67,14 @@ class Program
 {
     static void Main(string[] args)
     {
-        // Створюємо два об'єкти Sphere з різними радіусами
-        Sphere sphere1 = new Sphere(3); // Куля з радіусом 3
-        Sphere sphere2 = new Sphere(4); // Куля з радіусом 4
-
-        // Виводимо інформацію про кожну кулю за допомогою перевизначеного ToString()
+         Random rand = new Random(DateTime.Now.Millisecond);
+        // Створення двох об'єктыв Sphere з різними радіусами
+        Sphere sphere1 = new Sphere(rand.Next(2, 10)); 
+        Sphere sphere2 = new Sphere(rand.Next(2, 10)); 
+        // Sphere sphere1 = new Sphere(3); 
+        // Sphere sphere2 = new Sphere(3); 
+        
+        // інформація про кожну кулю за допомогою перевизначеного ToString()
         Console.WriteLine(sphere1);
         Console.WriteLine(sphere2);
 
@@ -84,4 +87,3 @@ class Program
         Console.WriteLine($"sphere1 equals sphere3: {sphere1.Equals(sphere3)}"); // Очікувано: True, бо радіуси однакові
     }
 }
-

@@ -1,0 +1,10 @@
+C:\Users\user1\Documents\GitHub\LabsForNubip_OOP\lab15_NET\bin\Debug\lab15_NET.exe.config
+C:\Users\user1\Documents\GitHub\LabsForNubip_OOP\lab15_NET\bin\Debug\lab15_NET.exe
+C:\Users\user1\Documents\GitHub\LabsForNubip_OOP\lab15_NET\bin\Debug\lab15_NET.pdb
+C:\Users\user1\Documents\GitHub\LabsForNubip_OOP\lab15_NET\obj\Debug\lab15_NET.csproj.AssemblyReference.cache
+C:\Users\user1\Documents\GitHub\LabsForNubip_OOP\lab15_NET\obj\Debug\lab15_NET.Form1.resources
+C:\Users\user1\Documents\GitHub\LabsForNubip_OOP\lab15_NET\obj\Debug\lab15_NET.Properties.Resources.resources
+C:\Users\user1\Documents\GitHub\LabsForNubip_OOP\lab15_NET\obj\Debug\lab15_NET.csproj.GenerateResource.cache
+C:\Users\user1\Documents\GitHub\LabsForNubip_OOP\lab15_NET\obj\Debug\lab15_NET.csproj.CoreCompileInputs.cache
+C:\Users\user1\Documents\GitHub\LabsForNubip_OOP\lab15_NET\obj\Debug\lab15_NET.exe
+C:\Users\user1\Documents\GitHub\LabsForNubip_OOP\lab15_NET\obj\Debug\lab15_NET.pdb

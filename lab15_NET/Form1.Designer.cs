@@ -133,7 +133,7 @@
             this.Controls.Add(this.textBoxL);
             this.Controls.Add(this.textBoxH);
             this.Name = "Form1";
-            this.Text = "ConeCalculator";
+            this.Text = " ";
             this.Load += new System.EventHandler(this.Form1_Load);
             this.ResumeLayout(false);
             this.PerformLayout();

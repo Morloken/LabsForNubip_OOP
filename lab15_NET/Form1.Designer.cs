@@ -37,6 +37,8 @@
             this.labelResult = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
             this.buttonClose_Click = new System.Windows.Forms.Button();
+            this.label4 = new System.Windows.Forms.Label();
+            this.button2 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // textBoxH
@@ -91,7 +93,7 @@
             // labelResult
             // 
             this.labelResult.AutoSize = true;
-            this.labelResult.Location = new System.Drawing.Point(8, 196);
+            this.labelResult.Location = new System.Drawing.Point(172, 159);
             this.labelResult.Name = "labelResult";
             this.labelResult.Size = new System.Drawing.Size(188, 16);
             this.labelResult.TabIndex = 6;
@@ -99,7 +101,7 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(42, 252);
+            this.button1.Location = new System.Drawing.Point(187, 199);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(141, 32);
             this.button1.TabIndex = 8;
@@ -118,11 +120,35 @@
             this.buttonClose_Click.UseVisualStyleBackColor = false;
             this.buttonClose_Click.Click += new System.EventHandler(this.button2_Click);
             // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label4.Location = new System.Drawing.Point(169, 247);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(175, 32);
+            this.label4.TabIndex = 10;
+            this.label4.Text = "Завдання 1";
+            // 
+            // button2
+            // 
+            this.button2.BackColor = System.Drawing.Color.SpringGreen;
+            this.button2.Location = new System.Drawing.Point(397, 41);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(127, 28);
+            this.button2.TabIndex = 11;
+            this.button2.Text = "До завдання 2";
+            this.button2.UseVisualStyleBackColor = false;
+            this.button2.Click += new System.EventHandler(this.button2_Click_1);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(622, 527);
+            this.ClientSize = new System.Drawing.Size(551, 535);
+            this.ControlBox = false;
+            this.Controls.Add(this.button2);
+            this.Controls.Add(this.label4);
             this.Controls.Add(this.buttonClose_Click);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.labelResult);
@@ -133,7 +159,7 @@
             this.Controls.Add(this.textBoxL);
             this.Controls.Add(this.textBoxH);
             this.Name = "Form1";
-            this.Text = " ";
+            this.Text = " Завдання 1";
             this.Load += new System.EventHandler(this.Form1_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -151,6 +177,8 @@
         private System.Windows.Forms.Label labelResult;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button buttonClose_Click;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Button button2;
     }
 }
 

@@ -13,9 +13,13 @@ namespace lab15_NET
 {
     public partial class Form1: Form
     {
+
+        public static Form1 form1Instance;
         public Form1()
         {
-            InitializeComponent();
+          
+        InitializeComponent();
+            form1Instance = this;
 
             // Центрування
             int screenWidth = Screen.PrimaryScreen.WorkingArea.Width;
@@ -76,6 +80,13 @@ namespace lab15_NET
         private void button2_Click  (object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void button2_Click_1(object sender, EventArgs e)
+        {
+            this.Hide();
+            //Form2 form2 = new Form2();
+            Form2.form2Instance.Show();
         }
     }
 }

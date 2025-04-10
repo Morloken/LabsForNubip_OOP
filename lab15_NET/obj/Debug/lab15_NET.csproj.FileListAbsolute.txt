@@ -8,3 +8,14 @@ C:\Users\user1\Documents\GitHub\LabsForNubip_OOP\lab15_NET\obj\Debug\lab15_NET.c
 C:\Users\user1\Documents\GitHub\LabsForNubip_OOP\lab15_NET\obj\Debug\lab15_NET.csproj.CoreCompileInputs.cache
 C:\Users\user1\Documents\GitHub\LabsForNubip_OOP\lab15_NET\obj\Debug\lab15_NET.exe
 C:\Users\user1\Documents\GitHub\LabsForNubip_OOP\lab15_NET\obj\Debug\lab15_NET.pdb
+E:\Git Directories\First\LabsForNubip_OOP\lab15_NET\bin\Debug\lab15_NET.exe.config
+E:\Git Directories\First\LabsForNubip_OOP\lab15_NET\bin\Debug\lab15_NET.exe
+E:\Git Directories\First\LabsForNubip_OOP\lab15_NET\bin\Debug\lab15_NET.pdb
+E:\Git Directories\First\LabsForNubip_OOP\lab15_NET\obj\Debug\lab15_NET.csproj.AssemblyReference.cache
+E:\Git Directories\First\LabsForNubip_OOP\lab15_NET\obj\Debug\lab15_NET.Form1.resources
+E:\Git Directories\First\LabsForNubip_OOP\lab15_NET\obj\Debug\lab15_NET.Form2.resources
+E:\Git Directories\First\LabsForNubip_OOP\lab15_NET\obj\Debug\lab15_NET.Properties.Resources.resources
+E:\Git Directories\First\LabsForNubip_OOP\lab15_NET\obj\Debug\lab15_NET.csproj.GenerateResource.cache
+E:\Git Directories\First\LabsForNubip_OOP\lab15_NET\obj\Debug\lab15_NET.csproj.CoreCompileInputs.cache
+E:\Git Directories\First\LabsForNubip_OOP\lab15_NET\obj\Debug\lab15_NET.exe
+E:\Git Directories\First\LabsForNubip_OOP\lab15_NET\obj\Debug\lab15_NET.pdb

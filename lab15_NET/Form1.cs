@@ -15,6 +15,8 @@ namespace lab15_NET
     {
 
         public static Form1 form1Instance;
+
+        public static Form2 form2Instance = new Form2();
         public Form1()
         {
           
@@ -24,8 +26,8 @@ namespace lab15_NET
             // Центрування
             int screenWidth = Screen.PrimaryScreen.WorkingArea.Width;
             int screenHeight = Screen.PrimaryScreen.WorkingArea.Height;
-            int formWidth = 400;
-            int formHeight = 300;
+            int formWidth = 450;
+            int formHeight = 500;
 
             this.Width = formWidth;
             this.Height = formHeight;
@@ -79,13 +81,18 @@ namespace lab15_NET
 
         private void button2_Click  (object sender, EventArgs e)
         {
-            this.Close();
+            // Закриття програми
+            DialogResult result = MessageBox.Show("Ви впевнені, що хочете закрити програму?", "Закриття програми", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (result == DialogResult.Yes)
+            {
+                Application.Exit();
+            }
         }
 
         private void button2_Click_1(object sender, EventArgs e)
         {
             this.Hide();
-            //Form2 form2 = new Form2();
+            
             Form2.form2Instance.Show();
         }
     }

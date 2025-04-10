@@ -43,31 +43,35 @@
             // 
             // textBoxH
             // 
-            this.textBoxH.Location = new System.Drawing.Point(159, 16);
+            this.textBoxH.Location = new System.Drawing.Point(119, 13);
+            this.textBoxH.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.textBoxH.Name = "textBoxH";
-            this.textBoxH.Size = new System.Drawing.Size(217, 22);
+            this.textBoxH.Size = new System.Drawing.Size(164, 20);
             this.textBoxH.TabIndex = 0;
             // 
             // textBoxL
             // 
-            this.textBoxL.Location = new System.Drawing.Point(159, 64);
+            this.textBoxL.Location = new System.Drawing.Point(119, 52);
+            this.textBoxL.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.textBoxL.Name = "textBoxL";
-            this.textBoxL.Size = new System.Drawing.Size(217, 22);
+            this.textBoxL.Size = new System.Drawing.Size(164, 20);
             this.textBoxL.TabIndex = 1;
             // 
             // textBoxR
             // 
-            this.textBoxR.Location = new System.Drawing.Point(159, 107);
+            this.textBoxR.Location = new System.Drawing.Point(119, 87);
+            this.textBoxR.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.textBoxR.Name = "textBoxR";
-            this.textBoxR.Size = new System.Drawing.Size(217, 22);
+            this.textBoxR.Size = new System.Drawing.Size(164, 20);
             this.textBoxR.TabIndex = 2;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(82, 19);
+            this.label1.Location = new System.Drawing.Point(62, 15);
+            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(71, 16);
+            this.label1.Size = new System.Drawing.Size(57, 13);
             this.label1.TabIndex = 3;
             this.label1.Text = "h (висота)";
             this.label1.Click += new System.EventHandler(this.label1_Click);
@@ -75,35 +79,39 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(82, 67);
+            this.label2.Location = new System.Drawing.Point(62, 54);
+            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(63, 16);
+            this.label2.Size = new System.Drawing.Size(49, 13);
             this.label2.TabIndex = 4;
             this.label2.Text = "l (твірна)";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(39, 110);
+            this.label3.Location = new System.Drawing.Point(29, 89);
+            this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(114, 16);
+            this.label3.Size = new System.Drawing.Size(89, 13);
             this.label3.TabIndex = 5;
             this.label3.Text = "r (радіус основи)";
             // 
             // labelResult
             // 
             this.labelResult.AutoSize = true;
-            this.labelResult.Location = new System.Drawing.Point(172, 159);
+            this.labelResult.Location = new System.Drawing.Point(29, 126);
+            this.labelResult.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.labelResult.Name = "labelResult";
-            this.labelResult.Size = new System.Drawing.Size(188, 16);
+            this.labelResult.Size = new System.Drawing.Size(146, 13);
             this.labelResult.TabIndex = 6;
             this.labelResult.Text = "Відображення результатів: ";
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(187, 199);
+            this.button1.Location = new System.Drawing.Point(298, 87);
+            this.button1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(141, 32);
+            this.button1.Size = new System.Drawing.Size(106, 26);
             this.button1.TabIndex = 8;
             this.button1.Text = "Обчислити";
             this.button1.UseVisualStyleBackColor = true;
@@ -112,9 +120,10 @@
             // buttonClose_Click
             // 
             this.buttonClose_Click.BackColor = System.Drawing.Color.LightCoral;
-            this.buttonClose_Click.Location = new System.Drawing.Point(397, 3);
+            this.buttonClose_Click.Location = new System.Drawing.Point(298, 2);
+            this.buttonClose_Click.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.buttonClose_Click.Name = "buttonClose_Click";
-            this.buttonClose_Click.Size = new System.Drawing.Size(85, 32);
+            this.buttonClose_Click.Size = new System.Drawing.Size(64, 26);
             this.buttonClose_Click.TabIndex = 9;
             this.buttonClose_Click.Text = "Закрити";
             this.buttonClose_Click.UseVisualStyleBackColor = false;
@@ -124,18 +133,20 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label4.Location = new System.Drawing.Point(169, 247);
+            this.label4.Location = new System.Drawing.Point(144, 283);
+            this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(175, 32);
+            this.label4.Size = new System.Drawing.Size(139, 26);
             this.label4.TabIndex = 10;
             this.label4.Text = "Завдання 1";
             // 
             // button2
             // 
             this.button2.BackColor = System.Drawing.Color.SpringGreen;
-            this.button2.Location = new System.Drawing.Point(397, 41);
+            this.button2.Location = new System.Drawing.Point(298, 33);
+            this.button2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(127, 28);
+            this.button2.Size = new System.Drawing.Size(95, 23);
             this.button2.TabIndex = 11;
             this.button2.Text = "До завдання 2";
             this.button2.UseVisualStyleBackColor = false;
@@ -143,9 +154,9 @@
             // 
             // Form1
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(551, 535);
+            this.ClientSize = new System.Drawing.Size(458, 435);
             this.ControlBox = false;
             this.Controls.Add(this.button2);
             this.Controls.Add(this.label4);
@@ -158,6 +169,7 @@
             this.Controls.Add(this.textBoxR);
             this.Controls.Add(this.textBoxL);
             this.Controls.Add(this.textBoxH);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "Form1";
             this.Text = " Завдання 1";
             this.Load += new System.EventHandler(this.Form1_Load);

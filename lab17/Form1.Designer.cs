@@ -37,6 +37,7 @@
             this.buttonLoadBinary = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
             this.buttonLoadXml = new System.Windows.Forms.Button();
+            this.buttonGetClassInfo = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -123,11 +124,22 @@
             this.buttonLoadXml.UseVisualStyleBackColor = true;
             this.buttonLoadXml.Click += new System.EventHandler(this.buttonLoadXml_Click);
             // 
+            // buttonGetClassInfo
+            // 
+            this.buttonGetClassInfo.Location = new System.Drawing.Point(174, 282);
+            this.buttonGetClassInfo.Name = "buttonGetClassInfo";
+            this.buttonGetClassInfo.Size = new System.Drawing.Size(208, 23);
+            this.buttonGetClassInfo.TabIndex = 9;
+            this.buttonGetClassInfo.Text = "Отримати інформацію про клас";
+            this.buttonGetClassInfo.UseVisualStyleBackColor = true;
+            this.buttonGetClassInfo.Click += new System.EventHandler(this.buttonGetClassInfo_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(957, 590);
+            this.Controls.Add(this.buttonGetClassInfo);
             this.Controls.Add(this.buttonLoadXml);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.buttonLoadBinary);
@@ -139,6 +151,7 @@
             this.Controls.Add(this.numericUpDown1);
             this.Name = "Form1";
             this.Text = "Lab 17 Illarionov";
+            this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -156,6 +169,7 @@
         private System.Windows.Forms.Button buttonLoadBinary;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Button buttonLoadXml;
+        private System.Windows.Forms.Button buttonGetClassInfo;
     }
 }
 

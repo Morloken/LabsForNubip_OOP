@@ -1,8 +1,11 @@
-﻿using System;
+﻿
+using System;
 using System.Drawing;
 using System.IO;
-using System.Runtime.Serialization.Formatters.Binary;
+using System.Reflection;
 using System.Windows.Forms;
+
+using System.Runtime.Serialization.Formatters.Binary;
 using System.Xml.Serialization;
 
 namespace lab17
@@ -14,6 +17,7 @@ namespace lab17
         public Form1()
         {
             InitializeComponent();
+            
         }
 
         [Serializable]
@@ -50,6 +54,13 @@ namespace lab17
             }
         }
 
+        private void Form1_Load(object sender, EventArgs e)
+        {
+            numericUpDown1.Minimum = 1;
+            numericUpDown1.Maximum = 10000; // Потужно широкий діапазон!
+            LoadData();  // Потужне завантаження при запуску
+        }
+
         private void buttonDraw_Click(object sender, EventArgs e)
         {
             double radius = (double)numericUpDown1.Value;
@@ -76,7 +87,7 @@ namespace lab17
         {
             if (pentagon == null) return;
 
-#pragma warning disable SYSLIB0011
+#pragma warning disable SYSLIB0011// директива препроцесора в C#, яка вмикає або вимикає попередження компілятора для конкретного коду.
             using (FileStream fs = new FileStream("pentagon.dat", FileMode.Create))
             {
                 BinaryFormatter formatter = new BinaryFormatter();
@@ -84,7 +95,7 @@ namespace lab17
             }
 #pragma warning restore SYSLIB0011
 
-            MessageBox.Show("Збережено у Binary (pentagon.dat)");
+            MessageBox.Show("Потужно збережено у Binary (pentagon.dat)");
         }
 
         private void buttonSaveXml_Click(object sender, EventArgs e)
@@ -97,7 +108,7 @@ namespace lab17
                 serializer.Serialize(fs, pentagon);
             }
 
-            MessageBox.Show("Збережено у XML (pentagon.xml)");
+            MessageBox.Show("Потужно збережено у XML (pentagon.xml)");
         }
 
         private void buttonLoadBinary_Click(object sender, EventArgs e)
@@ -116,10 +127,14 @@ namespace lab17
             }
 #pragma warning restore SYSLIB0011
 
-            numericUpDown1.Value = (decimal)pentagon.Radius;
+            decimal value = (decimal)pentagon.Radius;
+            if (value < numericUpDown1.Minimum) value = numericUpDown1.Minimum;
+            if (value > numericUpDown1.Maximum) value = numericUpDown1.Maximum;
+            numericUpDown1.Value = value;
+
             panel1.Invalidate();
 
-            MessageBox.Show("Завантажено з Binary");
+            MessageBox.Show("Потужно завантажено з Binary");
         }
 
         private void buttonLoadXml_Click(object sender, EventArgs e)
@@ -136,10 +151,79 @@ namespace lab17
                 pentagon = (Pentagon)serializer.Deserialize(fs);
             }
 
-            numericUpDown1.Value = (decimal)pentagon.Radius;
+            decimal value = (decimal)pentagon.Radius;
+            if (value < numericUpDown1.Minimum) value = numericUpDown1.Minimum;
+            if (value > numericUpDown1.Maximum) value = numericUpDown1.Maximum;
+            numericUpDown1.Value = value;
+
             panel1.Invalidate();
 
-            MessageBox.Show("Завантажено з XML");
+            MessageBox.Show("Потужно завантажено з XML");
+        }
+
+        private void LoadData()
+        {
+            if (File.Exists("pentagon.dat"))
+            {
+#pragma warning disable SYSLIB0011
+                using (FileStream fs = new FileStream("pentagon.dat", FileMode.Open))
+                {
+                    BinaryFormatter formatter = new BinaryFormatter();
+                    pentagon = (Pentagon)formatter.Deserialize(fs);
+                }
+#pragma warning restore SYSLIB0011
+
+                decimal value = (decimal)pentagon.Radius;
+                if (value < numericUpDown1.Minimum) value = numericUpDown1.Minimum;
+                if (value > numericUpDown1.Maximum) value = numericUpDown1.Maximum;
+                numericUpDown1.Value = value;
+
+                panel1.Invalidate();
+                MessageBox.Show("Потужно завантажено з Binary при запуску");
+            }
+            else if (File.Exists("pentagon.xml"))
+            {
+                using (FileStream fs = new FileStream("pentagon.xml", FileMode.Open))
+                {
+                    XmlSerializer serializer = new XmlSerializer(typeof(Pentagon));
+                    pentagon = (Pentagon)serializer.Deserialize(fs);
+                }
+
+                decimal value = (decimal)pentagon.Radius;
+                if (value < numericUpDown1.Minimum) value = numericUpDown1.Minimum;
+                if (value > numericUpDown1.Maximum) value = numericUpDown1.Maximum;
+                numericUpDown1.Value = value;
+
+                panel1.Invalidate();
+                MessageBox.Show("Потужно завантажено з XML при запуску");
+            }
+        }
+
+        private void buttonGetClassInfo_Click(object sender, EventArgs e)
+        {
+            if (pentagon == null)
+            {
+                MessageBox.Show("Об'єкт pentagon не створено!");
+                return;
+            }
+
+            Type pentagonType = typeof(Pentagon);
+
+            PropertyInfo[] properties = pentagonType.GetProperties();
+            string propertiesInfo = "Властивості класу:\n";
+            foreach (var property in properties)
+            {
+                propertiesInfo += $"{property.Name} ({property.PropertyType})\n";
+            }
+
+            MethodInfo[] methods = pentagonType.GetMethods();
+            string methodsInfo = "\nМетоди класу:\n";
+            foreach (var method in methods)
+            {
+                methodsInfo += $"{method.Name} ({method.ReturnType})\n";
+            }
+
+            MessageBox.Show(propertiesInfo + methodsInfo);
         }
     }
 }

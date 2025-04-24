@@ -1,0 +1,10 @@
+E:\Git Directories\First\LabsForNubip_OOP\lab17\bin\Debug\lab17.exe.config
+E:\Git Directories\First\LabsForNubip_OOP\lab17\bin\Debug\lab17.exe
+E:\Git Directories\First\LabsForNubip_OOP\lab17\bin\Debug\lab17.pdb
+E:\Git Directories\First\LabsForNubip_OOP\lab17\obj\Debug\lab17.csproj.AssemblyReference.cache
+E:\Git Directories\First\LabsForNubip_OOP\lab17\obj\Debug\lab17.Form1.resources
+E:\Git Directories\First\LabsForNubip_OOP\lab17\obj\Debug\lab17.Properties.Resources.resources
+E:\Git Directories\First\LabsForNubip_OOP\lab17\obj\Debug\lab17.csproj.GenerateResource.cache
+E:\Git Directories\First\LabsForNubip_OOP\lab17\obj\Debug\lab17.csproj.CoreCompileInputs.cache
+E:\Git Directories\First\LabsForNubip_OOP\lab17\obj\Debug\lab17.exe
+E:\Git Directories\First\LabsForNubip_OOP\lab17\obj\Debug\lab17.pdb

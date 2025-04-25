@@ -8,3 +8,13 @@ E:\Git Directories\First\LabsForNubip_OOP\lab17\obj\Debug\lab17.csproj.GenerateR
 E:\Git Directories\First\LabsForNubip_OOP\lab17\obj\Debug\lab17.csproj.CoreCompileInputs.cache
 E:\Git Directories\First\LabsForNubip_OOP\lab17\obj\Debug\lab17.exe
 E:\Git Directories\First\LabsForNubip_OOP\lab17\obj\Debug\lab17.pdb
+C:\Users\user1\Documents\GitHub\LabsForNubip_OOP\lab17\bin\Debug\lab17.exe.config
+C:\Users\user1\Documents\GitHub\LabsForNubip_OOP\lab17\bin\Debug\lab17.exe
+C:\Users\user1\Documents\GitHub\LabsForNubip_OOP\lab17\bin\Debug\lab17.pdb
+C:\Users\user1\Documents\GitHub\LabsForNubip_OOP\lab17\obj\Debug\lab17.csproj.AssemblyReference.cache
+C:\Users\user1\Documents\GitHub\LabsForNubip_OOP\lab17\obj\Debug\lab17.Form1.resources
+C:\Users\user1\Documents\GitHub\LabsForNubip_OOP\lab17\obj\Debug\lab17.Properties.Resources.resources
+C:\Users\user1\Documents\GitHub\LabsForNubip_OOP\lab17\obj\Debug\lab17.csproj.GenerateResource.cache
+C:\Users\user1\Documents\GitHub\LabsForNubip_OOP\lab17\obj\Debug\lab17.csproj.CoreCompileInputs.cache
+C:\Users\user1\Documents\GitHub\LabsForNubip_OOP\lab17\obj\Debug\lab17.exe
+C:\Users\user1\Documents\GitHub\LabsForNubip_OOP\lab17\obj\Debug\lab17.pdb
